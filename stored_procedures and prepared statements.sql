@@ -1,7 +1,8 @@
+
+-- a procedure that displays the maximum ordered quantity in the Orders table. 
 DELIMITER //
 
 
--- a procedure that displays the maximum ordered quantity in the Orders table. 
 CREATE PROCEDURE GetMaxQuantity()
 BEGIN
     SELECT MAX(quantity) AS max_ordered_quantity FROM Orders;
