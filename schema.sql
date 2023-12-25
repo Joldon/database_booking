@@ -84,9 +84,11 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `db_booking`.`Bookings`
 -- -----------------------------------------------------
+
+
 CREATE TABLE IF NOT EXISTS `db_booking`.`Bookings` (
   `booking_id` INT NOT NULL AUTO_INCREMENT,
-  `date` DATETIME NOT NULL,
+  `booking_date` DATE NOT NULL,
   `table_number` INT NOT NULL,
   `customer_id` INT NULL,
   PRIMARY KEY (`booking_id`),
