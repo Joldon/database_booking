@@ -60,3 +60,30 @@ END//
 DELIMITER ;
 
 CALL AddValidBooking('2022-11-14', 2);
+
+
+-- create a new procedure called AddBooking to add a new table booking record.
+-- The procedure should include four input parameters in the form of the following bookings parameters:
+-- booking id, customer id, booking date, and table number.
+
+DELIMITER //
+CREATE PROCEDURE AddBooking(
+	IN booking_id_param INT,
+    IN booking_date_param DATE,
+    IN table_number_param INT,
+	IN customer_id_param INT
+)
+BEGIN
+	INSERT INTO Bookings (booking_id, booking_date, table_number, customer_id)
+    VALUES (booking_id_param, booking_date_param, table_number_param, customer_id_param);
+    
+    SELECT 'New booking added' AS OutputMessage;
+END //
+
+DELIMITER ;
+
+CALL AddBooking(9, '2022-11-14', 3, 4);
+
+
+
+
